@@ -4,6 +4,8 @@
 # Quickstart Link
 # https://flask.palletsprojects.com/en/2.2.x/quickstart/
 
+# Jinja Template 
+# https://jinja.palletsprojects.com/en/3.1.x/templates/
 
 # Import the Flask Class from the flask module
 from flask import Flask
