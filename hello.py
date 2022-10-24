@@ -20,4 +20,3 @@ def index():
 @app.route('/posts')
 def posts():
     return 'Posts will eventually be on this page.'
-
