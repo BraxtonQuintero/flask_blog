@@ -1,16 +1,17 @@
-from flask import render_template 
-from app import app 
+from flask import render_template
+from app import app
 
-# Create a route for our app
+# Create routes for our app
 @app.route('/')
 def index():
-    user_info = { 
-        'username': 'brians',
-        'email': 'brians@codingtemple.com'
+    user_info = {
+        'username': 'cbale',
+        'email': 'christianb@movies.com'
     }
-    return render_template('index.html')
+    colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+    return render_template('index.html', user=user_info, colors=colors)
 
 
 @app.route('/posts')
 def posts():
-    return 'Posts will eventually be on this page.'
+    return 'Hi this is Posts!'
