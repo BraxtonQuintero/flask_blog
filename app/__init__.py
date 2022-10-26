@@ -21,6 +21,9 @@ from flask import Flask
 # Import SQLAlchemy and Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+
+
+from flask_login import LoginManager
 # import the Config class from the config module
 from config import Config
 
@@ -34,6 +37,9 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 # Create an instance of Migrate to represent our migration engine
 migrate = Migrate(app, db)
+
+# Create an instance of LoginManager to let our app allow login capabilities
+login = LoginManager(app)
 
 # import all of the routes from the routes module in the current folder
 from . import routes, models

@@ -44,3 +44,6 @@ def signup():
         return redirect(url_for('index'))
 
     return render_template('signup.html', form=form)
+
+@app.route('/signup', methods=["GET", "POST"])
+def login():
