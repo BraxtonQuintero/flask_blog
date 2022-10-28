@@ -1,8 +1,8 @@
 from flask import render_template, redirect, url_for, flash
 from flask_login import login_user, logout_user
 from app import app
-from app.forms import SignUpForm, LogInForm
-from app.models import User
+from app.forms import PostForm, SignUpForm, LogInForm
+from app.models import User, Post
 
 # Create routes for our app
 @app.route('/')
@@ -71,3 +71,15 @@ def logout():
     logout_user()
     flash('You have been logged out', 'info')
     return redirect(url_for('index'))
+
+
+@app.route('/create')
+def create():
+    form = PostForm()
+    if form.validate_on_submit():
+        title =form.title.data
+        body = form.body.data
+        
+        new_post = Post(title=title, body=body)
+    flash('Post has been created', 'info')
+    return redirect(url_for('create.html', form = form))   
